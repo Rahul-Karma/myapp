@@ -1,0 +1,5 @@
+<sitemesh>
+    <mapping path="/admin" decorator="/WEB-INF/layout/adminlayout.jsp"/>
+    <mapping path="/templates/*" decorator="/WEB-INF/layout/blank.jsp"/>
+    <mapping path="/*" decorator="/WEB-INF/layout/layout.jsp"/>
+</sitemesh>

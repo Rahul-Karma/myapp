@@ -1,0 +1,30 @@
+<table class="table movietable">
+    <tr>
+        <td><h3>Details for {{blog.name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{blog.name}}</td>
+    </tr>
+    <tr>
+        <td>Created</td>
+        <td>{{blog.created}}</td>
+    </tr>
+    
+        <tr>
+        <td>Content</td>
+        <td>{{blog.content}}</td>
+    </tr>
+    <tr>
+        <td>Header</td>
+        <td>{{blog.header}}</td>
+    </tr>
+    <tr>
+        <td>Footer</td>
+        <td>{{blog.footer}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editBlog({id:blog.id})">Edit</a>
+</div>

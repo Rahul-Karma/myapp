@@ -1,0 +1,23 @@
+<style parse-style>
+{{site.stylesheet}}
+</style>
+
+<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+<div ng-bind-html="site.header | renderHTMLCorrectly" dynamic="site.header"></div>
+</header>
+
+<div class="site-container">
+<div ng-bind-html="site.content | renderHTMLCorrectly" dynamic="site.content"></div>
+
+<div ui-view="pagecontent"></div>
+
+<div class="footer-widgets">
+<div ng-bind-html="site.footer | renderHTMLCorrectly" dynamic="site.footer"></div>
+</div>
+
+<footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+<div class="wrap"><p>Copyright &#x000A9;&nbsp;2016 &#x000B7; <a href="#/home">ggames.in</a> on <a href="#/home">My Themes</a> &#x000B7; <a href="#/home">Karma Tech</a> &#x000B7; <a ui-sref="login">Log in</a></p>
+</div>
+</footer>
+
+</div>

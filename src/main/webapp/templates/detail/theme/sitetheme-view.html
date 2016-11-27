@@ -1,0 +1,25 @@
+<table class="table movietable">
+    <tr>
+        <td><h3>Details for {{sitetheme.name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>SiteTheme Name</td>
+        <td>{{sitetheme.name}}</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>{{sitetheme.description}}</td>
+    </tr>
+    <tr>
+        <td>Masthead</td>
+        <td>{{sitetheme.masthead}}</td>
+    </tr>
+    <tr>
+        <td>ID</td>
+        <td>{{sitetheme.id}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editSiteTheme({id:sitetheme.id})">Edit {{sitetheme.name}}</a>
+</div>

@@ -1,0 +1,42 @@
+	<div ng-controller="SiteViewController">
+	
+	<ul class="sidebar">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            Actions
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#/manage/site"> Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a ui-sref="manageSiteReport({id:site.id})">Reports <span class="menu-icon fa fa-sun-o"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a ui-sref="editSiteSetting({id:site.id})">Settings <span class="menu-icon fa fa-sun-o"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a ui-sref="manageSitePages({id:site.id})">Pages <span class="menu-icon fa fa-sun-o"></span></a>
+        </li>
+      </ul>
+      
+      </div>
+      <div class="sidebar-footer">
+        <div class="col-xs-4">
+          <a href="https://github.com/rdash/rdash-angular" target="_blank">
+            Github
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://github.com/rdash/rdash-angular/README.md" target="_blank">
+            About
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="#">
+            Support
+          </a>
+        </div>
+      </div>

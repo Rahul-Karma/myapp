@@ -1,0 +1,33 @@
+{
+    "name": "giveco-ui",
+    "description": "Bloat free responsive admin style dashboard.",
+    "version": "1.0.1",
+    "homepage": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "license": "MIT",
+    "keywords": [
+        "responsive",
+        "dashboard",
+        "admin"
+    ],
+    "main": [
+        "dist/css/giveco.css",
+        "dist/css/giveco.min.css",
+        "dist/fonts/montserrat-regular-webfont.eot",
+        "dist/fonts/montserrat-regular-webfont.svg",
+        "dist/fonts/montserrat-regular-webfont.ttf",
+        "dist/fonts/montserrat-regular-webfont.woff"
+    ],
+    "ignore": [
+        "**/**.*",
+        "!LICENSE",
+        "!bower.json",
+        "!README.md",
+        "!dist/css",
+        "!dist/fonts"
+    ],
+    "dependencies": {}
+}

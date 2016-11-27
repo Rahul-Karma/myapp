@@ -1,0 +1,38 @@
+
+<div class="form-group">
+    <label for="title" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="mediadocument.name" class="form-control" id="medianame" placeholder="Name"/>
+        <!-- <i ng-show="myForm.userName.$error.required">*required</i><br> -->
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Category</label>
+    <div class="col-sm-10" ng-controller='CategoriesController'>
+    	<select name="mediadocument.category.name" class="form-control" ng-model="mediadocument.category.name" ng-options="category for category in categories track by category" required></select>
+    </div>
+</div>
+  <div class="form-group">
+ <label for="director" class="col-sm-2 control-label">File</label>
+    <div class="col-sm-10">
+<!-- <input type="file" ngf-select="" ng-model="mediadocument.fileData" ngf-accept="'image/*'"> -->
+<input type="file" file-model="mediadocument.file" class="form-control" id="mediafilename" onchange="angular.element(this).scope().setFile(this)"/>
+<div ng-show="mediadocument.encodedFileData != null && !flag">
+<img style='display:block; width:100px;height:100px;' id='base64image'                 
+       data-ng-src='data:image/jpeg;base64,{{mediadocument.encodedFileData}}' />
+</div>
+<div ng-show="flag">
+<img ng-src="{{image_source}}" style='display:block; width:100px;height:100px;'>
+</div>
+</div> 
+</div> 
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </div>
+</div>
+
+  
+            

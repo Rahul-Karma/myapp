@@ -1,0 +1,33 @@
+
+	<ul class="sidebar" ng-show="siteTemplateId > 0">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            Services
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#">Header <span class="menu-icon fa fa-sun-o"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#">Content <span class="menu-icon fa fa-th-large"></span></a>
+        </li>
+         <li class="sidebar-list">
+          <a href="#">Footer <span class="menu-icon fa fa-th-large"></span></a>
+        </li>
+      </ul>
+      
+      <ul class="sidebar" ng-hide="siteTemplateId > 0">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            Services
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#/manage/pagetemplate">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+
+      </ul>

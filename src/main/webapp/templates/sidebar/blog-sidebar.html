@@ -1,0 +1,33 @@
+
+	<ul class="sidebar" ng-show="blogId > 0">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            Services
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#/manage/blog/edit/header?id={{blogId}}">Header <span class="menu-icon fa fa-sun-o"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/manage/blog/edit/content?id={{blogId}}">Content <span class="menu-icon fa fa-th-large"></span></a>
+        </li>
+         <li class="sidebar-list">
+          <a ui-sref="editBlogFooter({id:blogId})">Footer <span class="menu-icon fa fa-th-large"></span></a>
+        </li>
+      </ul>
+      
+      <ul class="sidebar" ng-hide="blogId > 0">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            Services
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#/manage/blog">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+
+      </ul>

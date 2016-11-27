@@ -1,0 +1,32 @@
+<div class="row">
+ 	<div class="col-lg-12">
+ 	<div class="panel panel-default">	
+ 	<div class="panel-body">
+ 	<h2>Update Profile</h2>
+ 	<form class="form-horizontal">	
+ 		<div class="form-group">
+ 			<label class="col-sm-2 text-right" for="site-name">First Name</label>
+ 			<div class="col-sm-4">
+ 				<input type="text" class="form-control" id="first-name" ng-model="user.firstName"/>
+ 			</div>	
+  		</div>
+ 		 <div class="form-group">
+ 			<label class="col-sm-2 text-right" for="site-name">Last Name</label>
+ 			<div class="col-sm-4">
+ 				<input type="text" class="form-control" id="last-name" ng-model="user.lastName"/>
+ 			</div>	
+  		</div>
+ 		<div class="form-group">
+ 			<label class="col-sm-2 text-right" for="site-description">Email</label>
+ 			<div class="col-sm-4">
+ 				<input type="text" id="email" class="form-control" ng-model="user.email"/>
+ 			</div>	
+ 		</div>
+ 		<div class="col-sm-2 text-right">
+ 			<input type="submit" ng-click="save(user)">
+ 		</div>
+ 	</form>	
+ 	</div>
+ </div>	
+ 	</div>
+</div>

@@ -1,0 +1,128 @@
+<div class="row">
+	<div class="col-xs-12">
+		<!-- stats start  -->
+ 	<div class="row text-center" ng-controller="MediaListController">
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-success">
+                    <span class="ti-stats-up"></span>
+                </span>
+                <div class="box-info">
+                    <h2><span class="size-h4"></span>{{(medias | filter:{accountId:currentaccount}).length}}</h2>
+                    <p class="text-muted"><span data-translate="dashboard.label.documents" class="ng-scope">Themes</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-info">
+                    <i class="ti-user"></i>
+                </span>
+                <div class="box-info">
+                    <h2>{{(medias | filter:{category:'CATEGORY_PDF'} | filter:{accountId:currentaccount}).length}}<span class="size-h4"></span></h2>
+                    <p class="text-muted"><span data-translate="dashboard.label.document.pdf" class="ng-scope">Members</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-warning">
+                    <i class="ti-money"></i>
+                </span>
+                <div class="box-info">
+                    <h2>{{(medias | filter:{category:'CATEGORY_EXCEL'} | filter:{accountId:currentaccount}).length}} <span class="size-h4"></span></h2>
+                    <p class="text-muted"><span data-translate="dashboard.label.document.excel" class="ng-scope">Emails Sent</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-danger">
+                    <i class="ti-shopping-cart"></i>
+                </span>
+                <div class="box-info">
+                    <h2>{{(medias | filter:{category:'CATEGORY_IMAGE'} | filter:{accountId:currentaccount}).length}}<span class="size-h4"></span></h2>
+                    <p class="text-muted"><span data-translate="dashboard.label.document.image" class="ng-scope">FB Shares</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+ 	<!-- stats end  -->
+	</div>
+</div>
+<br />
+<div>
+<a ui-sref="newMedia" class="btn btn-primary" style="float: right;">Add New Media</a>
+			<div class="bs-component" ng-controller="MediaListController">
+				<form class="form-inline">
+					<div class="form-group">
+						<label >Search</label>
+						<input type="text" ng-model="search" class="form-control" placeholder="Search">
+					</div>
+				</form>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<!-- <th ng-click="sort('id')">Id
+								<span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th> -->
+							<th ng-click="sort('first_name')">Name
+								<span class="glyphicon sort-icon" ng-show="sortKey=='name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							<th ng-click="sort('first_name')">Created
+								<span class="glyphicon sort-icon" ng-show="sortKey=='name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							<th ng-click="sort('last_name')">Category
+								<span class="glyphicon sort-icon" ng-show="sortKey=='description'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+ 							<th ng-click="sort('last_name')">File
+								<span class="glyphicon sort-icon" ng-show="sortKey=='masthead'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							<th>Action
+								<span class="glyphicon sort-icon" ng-show="sortKey=='action'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate="mediadocument in medias|orderBy:sortKey:reverse|filter:search|itemsPerPage:5|filter:{accountId:currentaccount}">
+							<!-- <td>{{mediadocument.id}}</td> -->
+							<td>{{mediadocument.name}}</td>
+							<td>{{mediadocument.created | date:"MM/dd/yyyy"}}</td>
+							<td>{{mediadocument.category.name}}</td>
+						    <td ng-switch="mediadocument.category.name">
+						    <img ng-switch-when="CATEGORY_IMAGE" style='display:block; width:100px;height:100px;' id='base64image'                 
+       						data-ng-src='data:image/jpeg;base64,{{mediadocument.encodedFileData}}' />		
+       						<audio ng-switch-when="CATEGORY_AUDIO" style='display:block; width:100px;height:100px;' id='base64image' controls data-ng-src='data:audio/ogg;base64,{{mediadocument.encodedFileData}}' >
+       						</audio>
+       						<video ng-switch-when="CATEGORY_VIDEO" controls style='display:block; width:100px;height:100px;'> 
+  								<source type="video/webm" data-ng-src="data:video/webm;base64,{{mediadocument.encodedFileData}}"> 
+  								<source type="video/mp4" data-ng-src="data:video/mp4;base64,{{mediadocument.encodedFileData}}"> 
+							</video>
+       						<div ng-switch-when="CATEGORY_PDF">
+       						PDF
+       						</div>
+       						<div ng-switch-when="CATEGORY_EXCEL">
+       						Excel
+       						</div>
+       						<div ng-switch-when="CATEGORY_DOC">
+       						Doc
+       						</div>
+       						<div ng-switch-default>
+       						N/A
+       						</div>
+       						</td> 
+                     <td>
+                     <!-- <a class="btn btn-primary" ui-sref="viewMedia({id:mediadocument.id})">View</a> -->
+            		 <a class="btn btn-primary" ui-sref="editMedia({id:mediadocument.id})">Edit</a>
+                     <a class="btn btn-danger"  ng-click="deleteMedia(mediadocument)">Delete</a>
+                     </td>
+						</tr>
+					</tbody>
+				</table> 
+				<dir-pagination-controls
+					max-size="5"
+					direction-links="true"
+					boundary-links="true" >
+				</dir-pagination-controls>
+			</div>
+</div>

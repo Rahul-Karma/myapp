@@ -1,0 +1,5 @@
+com\karma\app\test\util\CollectionTest.class
+com\karma\app\test\util\MyTest.class
+com\karma\app\test\util\UtilTestSuite.class
+com\karma\app\test\util\SiteUtilTest.class
+com\karma\app\test\util\Employee.class
